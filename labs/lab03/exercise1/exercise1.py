@@ -1,2 +1,11 @@
 def count_bright_spots(pixels):
-    pass
+    count = 0
+
+    for i in range(1, len(pixels) - 1):
+        if pixels[i] > pixels[i - 1] and pixels[i] > pixels[i + 1]:
+            count += 1
+
+    return count
+
+pixels = [100, 120, 200, 150, 180, 160, 140]
+print(count_bright_spots(pixels))
