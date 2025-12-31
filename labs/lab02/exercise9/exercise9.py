@@ -1,6 +1,3 @@
-# Lab 02 Exercise 9: Level Up Calculator
-# Write your code below:
-
 def calculate_xp_required(current_level):
     return 100 * current_level
 
