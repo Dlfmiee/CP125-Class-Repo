@@ -1,14 +1,28 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> cfa6238a06b91e1e1e3c6b5d7f15d0b46fd1047b
 def is_valid_multiple(amount):
     """
     Checks if the amount is a multiple of RM10.
     """
+<<<<<<< HEAD
     return amount > 0 and amount % 10 == 0
+=======
+    # TODO: Implement this function
+    pass
+>>>>>>> cfa6238a06b91e1e1e3c6b5d7f15d0b46fd1047b
 
 def is_balance_sufficient(amount, balance):
     """
     Checks if the balance is enough for the withdrawal.
     """
+<<<<<<< HEAD
     return balance >= amount
+=======
+    # TODO: Implement this function
+    pass
+>>>>>>> cfa6238a06b91e1e1e3c6b5d7f15d0b46fd1047b
 
 def process_withdrawal(amount, balance):
     """
@@ -17,8 +31,13 @@ def process_withdrawal(amount, balance):
     Returns "Invalid Amount" if not a multiple of 10.
     Returns "Insufficient Funds" if balance is too low.
     """
+<<<<<<< HEAD
     if not is_valid_multiple(amount):
         return "Invalid Amount"
     if not is_balance_sufficient(amount, balance):
         return "Insufficient Funds"
     return balance - amount
+=======
+    # TODO: Implement this function
+    pass
+>>>>>>> cfa6238a06b91e1e1e3c6b5d7f15d0b46fd1047b
