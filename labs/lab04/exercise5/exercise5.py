@@ -14,7 +14,6 @@ def find_momentum_days(prices):
             momentum_days.append(i + 1) 
     return momentum_days
 
-
 # Test
 prices = [100, 102, 105, 107, 106, 108, 112, 114]
 result = find_momentum_days(prices)
