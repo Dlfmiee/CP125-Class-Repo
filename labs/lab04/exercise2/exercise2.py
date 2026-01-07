@@ -8,7 +8,6 @@
 #
 # Use the debugger to find and fix the bugs.
 
-
 def calculate_average(scores):
     total = 0
     for i in range(len(scores)):
@@ -21,13 +20,12 @@ def count_passing(scores, passing_mark):
     for i in range(len(scores)):
         if scores[i] >= passing_mark:
             count = count + 1
-            return count
     return count
 
 
 def get_class_summary(scores, passing_mark):
     average = calculate_average(scores)
-    passing = count_passing(passing_mark, scores)
+    passing = count_passing(scores, passing_mark)
     failed = len(scores) - passing
     return (average, passing, failed)
 
