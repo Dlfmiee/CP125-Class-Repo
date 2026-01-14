@@ -1,11 +1,14 @@
-
 def clean_sessions(pool, sessions, dead_servers):
-    """
-    Verify dead servers in pool, remove their sessions, and return sorted list.
-    """
-    pass
+    cleaned = []
 
+    for session in sessions:
+        server = session[0]
+        if server not in dead_servers:
+            cleaned.append(session)
 
+    cleaned.sort()
+    return cleaned
+ 
 # Test
 pool = ("srv-A", "srv-B", "srv-C", "srv-D")
 sessions = [("srv-B", "cli-1"), ("srv-A", "cli-2"), ("srv-C", "cli-3"),
@@ -14,4 +17,3 @@ dead = ["srv-B", "srv-D"]
 
 result = clean_sessions(pool, sessions, dead)
 print(f"Cleaned Sessions: {result}")
-# Expected: [('srv-A', 'cli-2'), ('srv-C', 'cli-3')]
