@@ -13,4 +13,5 @@ def analyze_scores(score_records):
         if score > average:
             above_average_count += 1
     
+    above_average_count 
     return (highest, average, above_average_count)
