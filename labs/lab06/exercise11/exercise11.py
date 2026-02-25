@@ -21,9 +21,9 @@ def build_student_report(students, enrollments, required_courses):
         missing = find_missing_courses(completed, required_courses)
 
         if missing:
-            incomplete.append((student_id, len(missing)))
+            incomplete.append((len(missing), student_id))
 
-    return sorted(incomplete, key=lambda x: (-x[1], x[0]))
+    return sorted(incomplete, key=lambda x: (-x[0], x[1]))
 
 
 def find_incomplete_students(enrollments, required_courses):

@@ -1,7 +1,16 @@
 def find_at_risk_departments(departments, threshold):
-    # TODO: Your code here
-    # Hint: use .values() on the inner dict — no nested for loop
-    pass
+    at_risk = []
+
+    for dept, students in departments.items():
+        if not students:
+            continue
+
+        scores = students.values()
+        below = sum(1 for s in scores if s < threshold)
+        if below > (len(students) / 2):
+            at_risk.append(dept)
+
+    return sorted(at_risk)
 
 
 departments = {

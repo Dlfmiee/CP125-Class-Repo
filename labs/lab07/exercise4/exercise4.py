@@ -1,6 +1,15 @@
 def apply_upgrade(current, upgrade):
-    # TODO: Your code here
-    pass
+
+    result = dict(current)
+
+    for perm, level in upgrade.items():
+        if perm not in result:
+            result[perm] = level
+        else:
+            if level > result[perm]:
+                result[perm] = level
+
+    return result
 
 
 

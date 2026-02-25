@@ -1,6 +1,20 @@
 
 def find_slow_endpoints(api_calls, threshold):
-    pass
+    endpoint_latencies = {}
+
+    for endpoint, latency, status in api_calls:
+        if status == 200:
+            endpoint_latencies.setdefault(endpoint, []).append(latency)
+
+    slow = []
+    for endpoint, latencies in endpoint_latencies.items():
+        if len(latencies) < 2:
+            continue
+        avg = sum(latencies) / len(latencies)
+        if avg > threshold:
+            slow.append(endpoint)
+
+    return sorted(slow)
 
 
 api_calls = [
