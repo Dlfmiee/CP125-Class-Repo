@@ -101,5 +101,23 @@ calculate_averages("school_system/grades/midterm.csv", "school_system/grades/fin
 
 def generate_enrollment_report(old_file, new_file, output_file):
     
+    f = open(old_file, "r")
+    old_students = set(f)
+    w = open(new_file, "r")
+    new_students = set(w)
+    
+    f.close()
+    w.close()
 
-generate_enrollment_report("school_system/students/2024/names.txt", "school_system/students/2025/enrollment.txt", "school_system/reports/summary.txt")
+    all_students = old_students & new_students
+    
+    sorted_students = sorted(all_students)
+    z = open(output_file, "w")
+    
+    z.write("Name\n")
+    for name in sorted_students:
+        z.write(name + "\n")
+
+    z.close()
+    
+generate_enrollment_report("school_system/students/2024/names.txt", "school_system/students/2025/enrollment.txt", "school_system/reports/summary.csv")
