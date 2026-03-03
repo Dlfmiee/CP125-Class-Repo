@@ -1,2 +1,3 @@
-Sara Hassan
-Fatimah Omar
+Ali Ahmad: 87.5
+Sara Hassan: 80.0
+Ahmad Ibrahim: 90.0

@@ -1,1 +1,2 @@
-Total Students: 5
+Ali Ahmad: 85
+Ahmad Ibrahim: 92
