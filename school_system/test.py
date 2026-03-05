@@ -97,7 +97,7 @@ def calculate_averages(midterm_file, final_file, output_file):
         f.write(f"{name}: {average_score:.1f}\n")
     f.close()
 
-calculate_averages("school_system/grades/midterm.csv", "school_system/grades/final.csv", "school_system/reports/statistics.txt")"""
+calculate_averages("school_system/grades/midterm.csv", "school_system/grades/final.csv", "school_system/reports/statistics.txt")
 
 def generate_enrollment_report(old_file, new_file, output_file):
     
@@ -121,3 +121,53 @@ def generate_enrollment_report(old_file, new_file, output_file):
     z.close()
     
 generate_enrollment_report("school_system/students/2024/names.txt", "school_system/students/2025/enrollment.txt", "school_system/reports/summary.csv")
+
+import csv
+
+def append_top_performers(input_file, output_file):
+    
+    f = open(input_file,'r')
+    reader = csv.reader(f)
+    next(reader)
+    
+    top_list = []
+    
+    for list in reader:
+        name = list[0]
+        attendance = list[1]
+    
+        if float(attendance) >= 90:
+            top_list.append(f"{name},{attendance}")
+            
+    f.close()
+    
+    f = open(output_file, 'a', newline="")
+    for name in top_list:
+        f.write(name + "\n")
+    
+    f.close()
+    
+append_top_performers("school_system/students/2024/attendance.csv", "school_system/reports/top_performers.csv")"""
+
+import csv
+
+def append_new_students(new_file, target_file):
+    f = open(new_file, 'r')
+    reader = csv.reader(f)
+    next(reader)
+    
+    new_students = []
+    for line in reader:
+        new_students.append(line)
+    
+    f.close()
+    
+    g = open(target_file, 'a', newline="")
+    writer = csv.writer(g)
+    
+    for student in new_students:
+        writer.writerow(student)
+    
+    g.close()
+
+append_new_students("school_system/students/2025/new_students.csv", "school_system/grades/final.csv")
