@@ -15,4 +15,3 @@ def show_science_distribution(filename):
     plt.show()
 
     return len(df)
-show_science_distribution("labs/lab09/data/students.csv")

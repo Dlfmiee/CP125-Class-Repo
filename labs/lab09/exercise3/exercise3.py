@@ -14,4 +14,3 @@ def show_math_trend(filename):
     plt.show()
 
     return len(df)
-show_math_trend("labs/lab09/data/students.csv")

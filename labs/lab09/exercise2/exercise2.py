@@ -15,8 +15,8 @@ def compare_averages(filename):
         "English": Mean_English
     }
 
-    best_subject = averages.idxmax()
-    worst_subject = averages.idxmin()
+    best_subject = max(averages, key=averages.get)
+    worst_subject = min(averages, key=averages.get)
 
     return {
         "Math": Mean_Math,
@@ -24,4 +24,4 @@ def compare_averages(filename):
         "English": Mean_English,
         "best_subject": best_subject,
         "worst_subject":  worst_subject
-        }
+    }
